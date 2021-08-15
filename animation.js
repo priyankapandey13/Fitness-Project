@@ -330,8 +330,8 @@ function showSlides2() {
 // menu toggle
 
 $(".nav-btn").click(function(){
-	$(".navbar-collapse").toggleClass("collapse");
-	
+	$(".navbar-collapse").toggleClass("collapse"),
+	$(".header").toggleClass("navbar-expand");
   });
 
 

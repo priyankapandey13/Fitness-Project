@@ -152,13 +152,13 @@ function initIntro() {
         duration: 4,
     })
 
-    .to('.intro__img--2', {
-        // x: 50,
-        x: -1000,
-        // opacity: 0,
-        ease: 'power2',
-        duration: 8,
-    });
+    // .to('.intro__img--2', {
+    //     // x: 50,
+    //     x: -1000,
+    //     // opacity: 0,
+    //     ease: 'power2',
+    //     duration: 8,
+    // });
 }
 
 // {   duration: 1.2, 
