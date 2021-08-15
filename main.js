@@ -10,6 +10,7 @@ selectAll = e => document.querySelectorAll(e);
 const stage = select('.stage');
 const slides = selectAll(".slide");
 const links = selectAll(".slide__scroll-link");
+const Navlinks = selectAll(".nav-link");
 const titles = selectAll('.col__content-title');
 // const introTitle = new SplitText('.intro__title', {type: "lines", linesClass: "intro-line"});
 // const splitTitles = new SplitText(titles, {type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
@@ -73,6 +74,20 @@ function initHeader() {
             ease: "power4"
         });
     });
+
+    navBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        gsap.to(window, {
+            duration: 2, 
+            scrollTo:{
+                y: "#slide-0"
+            },
+            ease: "power2.inOut"
+        });
+    });
+
+
+    
 }
 
 function initIntro() {
@@ -180,8 +195,11 @@ function initLinks() {
             e.preventDefault();
             gsap.to(window, {
                 duration: 2, 
+                // scrollTo:{
+                //     y: "#slide-" + (index + 2)
+                // },
                 scrollTo:{
-                    y: "#slide-" + (index + 2)
+                    y: "#slide-" + (index + 1)
                 },
                 ease: "power2.inOut"
             });
@@ -392,6 +410,37 @@ function initKeys() {
     });
 }
 
+
+
+
+
+
+
+function initNavLinks() {
+    
+    // ScrollToPlugin links
+    
+    Navlinks.forEach((link, index, e) => {     
+        
+        // let linkST = link.querySelector('.slide__scroll-line');
+        
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap.to(window, {
+                duration: 2, 
+                
+                scrollTo:{
+                    y: "#slide-" + (index+1)
+                },
+                ease: "power2.inOut"
+            });
+            slideID++;
+        });
+
+    })
+}
+
+
 function init() {
     gsap.set(stage, { autoAlpha: 1 });
     initHeader();
@@ -400,6 +449,7 @@ function init() {
 	initSlides();
 	initParallax();
     initKeys();
+    initNavLinks();
 }
 
 window.onload = () => {

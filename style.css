@@ -793,8 +793,12 @@ p {
   top: 2.2vw;
 }
 
-.slide--0 .slide__scroll-line {
-  background: #C0D7D8;
+.slide--0 .slide__scroll-link {
+  left: 50%;
+}
+
+.slide--0 .slide__scroll-link .slide__scroll-line::after {
+  top: 43%;
 }
 
 .slide--1 .col--img {

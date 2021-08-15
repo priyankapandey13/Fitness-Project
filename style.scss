@@ -783,12 +783,20 @@ top: 2.2vw;
 }
 
 .slide--0 {
-    .slide__scroll-line {
-        background: #C0D7D8;
+    .slide__scroll-link{
+        left: 50%;
+        .slide__scroll-line {
+            // background: #C0D7D8;
+            &::after{
+                top:43%;
+                
+            }
+        }
     }
 }
 
 .slide--1 {
+    
      .col--img{
         flex-basis: 35%;
           bottom:0;
